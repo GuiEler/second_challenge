@@ -50,19 +50,19 @@ mixin AppTheme {
   );
 
   static const ColorScheme darkColorScheme = ColorScheme(
-    background: Color(0xFF303030),
+    background: Color(0xFF000000),
     brightness: Brightness.dark,
-    error: Color(0xFFD83838),
-    onBackground: Color(0xFFFCFCFC),
+    error: Color(0xFFE50914),
+    onBackground: Color(0xFF303030),
     onError: Color(0xFF303030),
     onPrimary: Color(0xFF303030),
     onSecondary: Color(0xFF303030),
-    onSurface: Color(0xFFFCFCFC),
+    onSurface: Color(0xFF677075),
     primary: Color(0xFF31844A),
     primaryVariant: Color(0xFF63B476),
     secondary: Color(0xFF367E9B),
     secondaryVariant: Color(0xFF6AADCC),
-    surface: Color(0xFF383838),
+    surface: Color(0xFF303030),
   );
 
   static ElevatedButtonThemeData elevatedButtonThemeData(
