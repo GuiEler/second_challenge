@@ -18,15 +18,10 @@ class SplashPage extends StatelessWidget {
                 .opacityTransition(0.3),
             (Route<dynamic> route) => false));
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: AppGradients.linear,
-        ),
+      body: SizedBox.expand(
         child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Image.asset(AppImages.logo)),
+            child: Image.asset(AppImages.splashLogo)),
       ),
     );
   }
