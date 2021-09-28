@@ -1,3 +1,3 @@
 class AppImages {
-  static String get logo => "lib/assets/images/logo.png";
+  static String get splashLogo => "lib/assets/images/splash_logo.png";
 }
