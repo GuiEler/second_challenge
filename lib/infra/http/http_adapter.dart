@@ -1,8 +1,6 @@
 import 'dart:convert';
-
 import 'package:http/http.dart';
-
-import 'http.dart';
+import '../../data/http/http.dart';
 
 class HttpAuthorizedAdapter implements HttpClient {
   final HttpAdapter httpAdapter;
@@ -26,7 +24,8 @@ class HttpAuthorizedAdapter implements HttpClient {
       'Authorization': 'Bearer $token',
     };
 
-    return httpAdapter.request(url: url, method: method, body: body, headers: headers);
+    return httpAdapter.request(
+        url: url, method: method, body: body, headers: headers);
   }
 }
 
@@ -55,11 +54,13 @@ class HttpAdapter implements HttpClient {
 
     try {
       if (method == 'post') {
-        futureResponse = client.post(Uri.parse(url), headers: defaultHeaders, body: jsonBody);
+        futureResponse = client.post(Uri.parse(url),
+            headers: defaultHeaders, body: jsonBody);
       } else if (method == 'get') {
         futureResponse = client.get(Uri.parse(url), headers: defaultHeaders);
       } else if (method == 'put') {
-        futureResponse = client.put(Uri.parse(url), headers: defaultHeaders, body: jsonBody);
+        futureResponse =
+            client.put(Uri.parse(url), headers: defaultHeaders, body: jsonBody);
       }
 
       if (futureResponse != null) {
