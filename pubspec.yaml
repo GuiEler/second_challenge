@@ -33,7 +33,7 @@ flutter:
 flutter_icons:
   android: true
   ios: true
-  image_path: "lib/assets/icon/launcher_icon.png"
+  image_path: "lib/assets/icons/launcher_icon.png"
 
 flutter_app_name:
   name: "Nerdflix"
