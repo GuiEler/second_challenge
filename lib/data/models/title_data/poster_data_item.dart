@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 class PosterDataItemModel {
-  String? id;
-  String? link;
-  double? aspectRatio;
-  String? language;
-  int? width;
-  int? height;
+  final String? id;
+  final String? link;
+  final double? aspectRatio;
+  final String? language;
+  final int? width;
+  final int? height;
 
   PosterDataItemModel({
     this.id,

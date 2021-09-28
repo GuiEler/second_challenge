@@ -1,11 +1,11 @@
 import 'dart:convert';
 
 class MovieShortModel {
-  String? id;
-  String? title;
-  String? year;
-  String? image;
-  String? imDbRating;
+  final String? id;
+  final String? title;
+  final String? year;
+  final String? image;
+  final String? imDbRating;
 
   MovieShortModel({
     this.id,

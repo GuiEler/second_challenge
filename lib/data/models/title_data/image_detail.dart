@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 class ImageDataDetailModel {
-  String? title;
-  String? image;
+  final String? title;
+  final String? image;
 
   ImageDataDetailModel({
     this.title,

@@ -3,16 +3,16 @@ import 'dart:convert';
 import '../models.dart';
 
 class WikipediaDataModel {
-  String? imDbId;
-  String? title;
-  String? fullTitle;
-  String? type;
-  String? language;
-  String? titleInLanguage;
-  String? url;
-  WikipediaDataPlotModel? plotShort;
-  WikipediaDataPlotModel? plotFull;
-  String? errorMessage;
+  final String? imDbId;
+  final String? title;
+  final String? fullTitle;
+  final String? type;
+  final String? language;
+  final String? titleInLanguage;
+  final String? url;
+  final WikipediaDataPlotModel? plotShort;
+  final WikipediaDataPlotModel? plotFull;
+  final String? errorMessage;
 
   WikipediaDataModel({
     this.imDbId,

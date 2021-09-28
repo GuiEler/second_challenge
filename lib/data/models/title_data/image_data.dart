@@ -3,13 +3,13 @@ import 'dart:convert';
 import '../models.dart';
 
 class ImageDataModel {
-  String? imDbId;
-  String? title;
-  String? fullTitle;
-  String? type;
-  String? year;
-  List<ImageDataDetailModel>? items;
-  String? errorMessage;
+  final String? imDbId;
+  final String? title;
+  final String? fullTitle;
+  final String? type;
+  final String? year;
+  final List<ImageDataDetailModel>? items;
+  final String? errorMessage;
 
   ImageDataModel({
     this.imDbId,

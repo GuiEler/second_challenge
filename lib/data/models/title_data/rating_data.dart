@@ -1,18 +1,18 @@
 import 'dart:convert';
 
 class RatingDataModel {
-  String? imDbId;
-  String? title;
-  String? fullTitle;
-  String? type;
-  String? year;
-  String? imDb;
-  String? metacritic;
-  String? theMovieDb;
-  String? rottenTomatoes;
-  String? tVcom;
-  String? filmAffinity;
-  String? errorMessage;
+  final String? imDbId;
+  final String? title;
+  final String? fullTitle;
+  final String? type;
+  final String? year;
+  final String? imDb;
+  final String? metacritic;
+  final String? theMovieDb;
+  final String? rottenTomatoes;
+  final String? tVcom;
+  final String? filmAffinity;
+  final String? errorMessage;
 
   RatingDataModel({
     this.imDbId,

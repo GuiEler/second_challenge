@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 class BoxOfficeShortModel {
-  String? budget;
-  String? openingWeekendUSA;
-  String? grossUSA;
-  String? cumulativeWorldwideGross;
+  final String? budget;
+  final String? openingWeekendUSA;
+  final String? grossUSA;
+  final String? cumulativeWorldwideGross;
 
   BoxOfficeShortModel({
     this.budget,

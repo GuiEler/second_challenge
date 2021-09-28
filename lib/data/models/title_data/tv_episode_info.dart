@@ -1,15 +1,15 @@
 import 'dart:convert';
 
 class TvEpisodeInfoModel {
-  String? seriesId;
-  String? seriesTitle;
-  String? seriesFullTitle;
-  String? seriesYear;
-  String? seriesYearEnd;
-  String? seasonNumber;
-  String? episodeNumber;
-  String? previousEpisodeId;
-  String? nextEpisodeId;
+  final String? seriesId;
+  final String? seriesTitle;
+  final String? seriesFullTitle;
+  final String? seriesYear;
+  final String? seriesYearEnd;
+  final String? seasonNumber;
+  final String? episodeNumber;
+  final String? previousEpisodeId;
+  final String? nextEpisodeId;
 
   TvEpisodeInfoModel({
     this.seriesId,

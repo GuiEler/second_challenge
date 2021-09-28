@@ -3,9 +3,9 @@ import 'dart:convert';
 import '../models.dart';
 
 class KeywordDataModel {
-  String? keyword;
-  List<MovieShortModel>? items;
-  String? errorMessage;
+  final String? keyword;
+  final List<MovieShortModel>? items;
+  final String? errorMessage;
 
   KeywordDataModel({
     this.keyword,

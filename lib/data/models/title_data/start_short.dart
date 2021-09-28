@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 class StarShortModel {
-  String? id;
-  String? name;
+  final String? id;
+  final String? name;
 
   StarShortModel({
     this.id,

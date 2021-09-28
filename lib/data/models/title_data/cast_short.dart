@@ -3,8 +3,8 @@ import 'dart:convert';
 import '../models.dart';
 
 class CastShortModel {
-  String? job;
-  List<CastShortItemModel>? items;
+  final String? job;
+  final List<CastShortItemModel>? items;
 
   CastShortModel({
     this.job,

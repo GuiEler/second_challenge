@@ -3,25 +3,25 @@ import 'dart:convert';
 import '../models.dart';
 
 class NewMovieDataDetailModel {
-  String? id;
-  String? title;
-  String? fullTitle;
-  String? year;
-  String? releaseState;
-  String? image;
-  String? runtimeMins;
-  String? runtimeStr;
-  String? plot;
-  String? contentRating;
-  String? imDbRating;
-  String? imDbRatingCount;
-  String? metacriticRating;
-  String? genres;
-  List<KeyValueItemModel>? genreList;
-  String? diretors;
-  List<StarShortModel>? diretorList;
-  String? stars;
-  List<StarShortModel>? starList;
+  final String? id;
+  final String? title;
+  final String? fullTitle;
+  final String? year;
+  final String? releaseState;
+  final String? image;
+  final String? runtimeMins;
+  final String? runtimeStr;
+  final String? plot;
+  final String? contentRating;
+  final String? imDbRating;
+  final String? imDbRatingCount;
+  final String? metacriticRating;
+  final String? genres;
+  final List<KeyValueItemModel>? genreList;
+  final String? diretors;
+  final List<StarShortModel>? diretorList;
+  final String? stars;
+  final List<StarShortModel>? starList;
 
   NewMovieDataDetailModel({
     this.id,

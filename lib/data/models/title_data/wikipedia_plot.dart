@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 class WikipediaDataPlotModel {
-  String? plainText;
-  String? html;
+  final String? plainText;
+  final String? html;
 
   WikipediaDataPlotModel({
     this.plainText,

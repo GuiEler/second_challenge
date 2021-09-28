@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 class CompanyShortModel {
-  String? id;
-  String? name;
+  final String? id;
+  final String? name;
 
   CompanyShortModel({
     this.id,

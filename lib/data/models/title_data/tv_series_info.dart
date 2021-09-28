@@ -3,8 +3,8 @@ import 'dart:convert';
 import '../models.dart';
 
 class TvSeriesInfoModel {
-  String? yearEnd;
-  String? creators;
+  final String? yearEnd;
+  final String? creators;
 
   List<StarShortModel>? creatorList;
   List<String>? seasons;

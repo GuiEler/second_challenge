@@ -1,19 +1,19 @@
 import 'dart:convert';
 
 class TrailerDataModel {
-  String? imDbId;
-  String? title;
-  String? fullTitle;
-  String? type;
-  String? year;
-  String? videoId;
-  String? videoTitle;
-  String? videoDescription;
-  String? thumbnailUrl;
-  String? uploadDate;
-  String? link;
-  String? linkEmbed;
-  String? errorMessage;
+  final String? imDbId;
+  final String? title;
+  final String? fullTitle;
+  final String? type;
+  final String? year;
+  final String? videoId;
+  final String? videoTitle;
+  final String? videoDescription;
+  final String? thumbnailUrl;
+  final String? uploadDate;
+  final String? link;
+  final String? linkEmbed;
+  final String? errorMessage;
 
   TrailerDataModel({
     this.imDbId,

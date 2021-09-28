@@ -3,14 +3,14 @@ import 'dart:convert';
 import '../models.dart';
 
 class PosterDataModel {
-  String? imDbId;
-  String? title;
-  String? fullTitle;
-  String? type;
-  String? year;
-  List<PosterDataItemModel>? posters;
-  List<PosterDataItemModel>? backdrops;
-  String? errorMessage;
+  final String? imDbId;
+  final String? title;
+  final String? fullTitle;
+  final String? type;
+  final String? year;
+  final List<PosterDataItemModel>? posters;
+  final List<PosterDataItemModel>? backdrops;
+  final String? errorMessage;
 
   PosterDataModel({
     this.imDbId,

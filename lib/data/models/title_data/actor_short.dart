@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 class ActorShortModel {
-  String? id;
-  String? image;
-  String? name;
-  String? asCharacter;
+  final String? id;
+  final String? image;
+  final String? name;
+  final String? asCharacter;
 
   ActorShortModel({
     this.id,

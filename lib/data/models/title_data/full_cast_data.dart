@@ -3,16 +3,16 @@ import 'dart:convert';
 import '../models.dart';
 
 class FullCastDataModel {
-  String? imDbId;
-  String? title;
-  String? fullTitle;
-  String? type;
-  String? year;
-  CastShortModel? directors;
-  CastShortModel? writers;
-  List<ActorShortModel>? actors;
-  List<CastShortModel>? others;
-  String? errorMessage;
+  final String? imDbId;
+  final String? title;
+  final String? fullTitle;
+  final String? type;
+  final String? year;
+  final CastShortModel? directors;
+  final CastShortModel? writers;
+  final List<ActorShortModel>? actors;
+  final List<CastShortModel>? others;
+  final String? errorMessage;
 
   FullCastDataModel({
     this.imDbId,

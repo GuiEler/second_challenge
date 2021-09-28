@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 class KeyValueItemModel {
-  String? key;
-  String? value;
+  final String? key;
+  final String? value;
 
   KeyValueItemModel({
     this.key,
