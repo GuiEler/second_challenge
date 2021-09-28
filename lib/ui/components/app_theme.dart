@@ -3,12 +3,13 @@ import 'package:google_fonts/google_fonts.dart';
 
 mixin AppTheme {
   static const _lightFillColor = Color(0xFF303030);
-  static const _darkFillColor = Color(0xFFFCFCFC);
+  static const _darkFillColor = Color(0xFF000000);
 
   static final Color _lightFocusColor = _lightFillColor.withOpacity(0.12);
   static final Color _darkFocusColor = _darkFillColor.withOpacity(0.12);
 
-  static ThemeData lightThemeData = themeData(lightColorScheme, _lightFocusColor);
+  static ThemeData lightThemeData =
+      themeData(lightColorScheme, _lightFocusColor);
   static ThemeData darkThemeData = themeData(darkColorScheme, _darkFocusColor);
 
   static ThemeData themeData(ColorScheme colorScheme, Color focusColor) {
@@ -64,7 +65,8 @@ mixin AppTheme {
     surface: Color(0xFF383838),
   );
 
-  static ElevatedButtonThemeData elevatedButtonThemeData(ColorScheme colorScheme) {
+  static ElevatedButtonThemeData elevatedButtonThemeData(
+      ColorScheme colorScheme) {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 0.0,
