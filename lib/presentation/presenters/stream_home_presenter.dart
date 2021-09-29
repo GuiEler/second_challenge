@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import '../../data/http/http.dart';
-import 'package:second_challenge/domain/usecases/load_coming_soon_data.dart';
+import '../../domain/usecases/usecases.dart';
 
 import '../../domain/entities/coming_soon.dart';
 import '../../domain/entities/keyword_data.dart';
