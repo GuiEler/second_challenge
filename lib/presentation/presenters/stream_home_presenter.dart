@@ -18,23 +18,23 @@ class StreamHomePresenter implements HomePresenter {
     required this.comingSoonLoader,
   });
 
-  final StreamController<List<ComingSoonEntity>> comingSoonStreamController =
-      StreamController<List<ComingSoonEntity>>();
-  final StreamController<List<KeywordDataEntity>> keywordDataStreamController =
-      StreamController<List<KeywordDataEntity>>();
+  final StreamController<ComingSoonEntity> comingSoonStreamController =
+      StreamController<ComingSoonEntity>();
+  final StreamController<KeywordDataEntity> keywordDataStreamController =
+      StreamController<KeywordDataEntity>();
 
   @override
-  Stream<List<ComingSoonEntity>> get comingSoonStream =>
+  Stream<ComingSoonEntity> get comingSoonStream =>
       comingSoonStreamController.stream;
 
   @override
-  Stream<List<KeywordDataEntity>> get keywordDataStream =>
+  Stream<KeywordDataEntity> get keywordDataStream =>
       keywordDataStreamController.stream;
 
   @override
   Future<void> loadComingSoonData() async {
     try {
-      final List<ComingSoonEntity> comingSoon =
+      final ComingSoonEntity comingSoon =
           await comingSoonLoader.loadComingSoon();
       comingSoonStreamController.add(comingSoon);
     } on HttpError catch (error) {
@@ -45,7 +45,7 @@ class StreamHomePresenter implements HomePresenter {
   @override
   Future<void> loadKeywordData() async {
     try {
-      final List<KeywordDataEntity> keywordData =
+      final KeywordDataEntity keywordData =
           await keywordDataLoader.loadKeywordData();
       keywordDataStreamController.add(keywordData);
     } on HttpError catch (error) {

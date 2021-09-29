@@ -44,7 +44,7 @@ class HttpAdapter implements HttpClient {
     final defaultHeaders = headers ?? {}
       ..addAll({
         'content-type': 'application/json',
-        'accept': 'application/json',
+        'accept': '*/*',
       });
 
     final jsonBody = body != null ? jsonEncode(body) : null;

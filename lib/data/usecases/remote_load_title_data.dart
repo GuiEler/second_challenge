@@ -13,12 +13,8 @@ class RemoteLoadTitleData implements LoadTitleData {
   });
 
   @override
-  Future<List<TitleDataEntity>> loadTitleData() async {
-    final List<dynamic> response =
-        await httpClient.request(url: url, method: 'get');
-    return response
-        .map((model) =>
-            TitleDataModel.fromMap(model as Map<String, dynamic>).toEntity())
-        .toList();
+  Future<TitleDataEntity> loadTitleData() async {
+    final dynamic response = await httpClient.request(url: url, method: 'get');
+    return TitleDataModel.fromMap(response).toEntity();
   }
 }

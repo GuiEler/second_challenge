@@ -14,12 +14,8 @@ class RemoteLoadKeywordData implements LoadKeywordData {
   });
 
   @override
-  Future<List<KeywordDataEntity>> loadKeywordData() async {
-    final List<dynamic> response =
-        await httpClient.request(url: url, method: 'get');
-    return response
-        .map((model) =>
-            KeywordDataModel.fromMap(model as Map<String, dynamic>).toEntity())
-        .toList();
+  Future<KeywordDataEntity> loadKeywordData() async {
+    final dynamic response = await httpClient.request(url: url, method: 'get');
+    return KeywordDataModel.fromMap(response).toEntity();
   }
 }

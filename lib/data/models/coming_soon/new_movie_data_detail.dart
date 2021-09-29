@@ -18,8 +18,8 @@ class NewMovieDataDetailModel {
   final String? metacriticRating;
   final String? genres;
   final List<KeyValueItemModel>? genreList;
-  final String? diretors;
-  final List<StarShortModel>? diretorList;
+  final String? directors;
+  final List<StarShortModel>? directorList;
   final String? stars;
   final List<StarShortModel>? starList;
 
@@ -39,8 +39,8 @@ class NewMovieDataDetailModel {
     this.metacriticRating,
     this.genres,
     this.genreList,
-    this.diretors,
-    this.diretorList,
+    this.directors,
+    this.directorList,
     this.stars,
     this.starList,
   });
@@ -62,8 +62,8 @@ class NewMovieDataDetailModel {
       'metacriticRating': metacriticRating,
       'genres': genres,
       'genreList': genreList?.map((x) => x.toMap()).toList(),
-      'diretors': diretors,
-      'diretorList': diretorList?.map((x) => x.toMap()).toList(),
+      'directors': directors,
+      'directorList': directorList?.map((x) => x.toMap()).toList(),
       'stars': stars,
       'starList': starList?.map((x) => x.toMap()).toList(),
     };
@@ -87,9 +87,9 @@ class NewMovieDataDetailModel {
       genres: map['genres'],
       genreList: List<KeyValueItemModel>.from(
           map['genreList']?.map((x) => KeyValueItemModel.fromMap(x))),
-      diretors: map['diretors'],
-      diretorList: List<StarShortModel>.from(
-          map['diretorList']?.map((x) => StarShortModel.fromMap(x))),
+      directors: map['directors'],
+      directorList: List<StarShortModel>.from(
+          map['directorList']?.map((x) => StarShortModel.fromMap(x))),
       stars: map['stars'],
       starList: List<StarShortModel>.from(
           map['starList']?.map((x) => StarShortModel.fromMap(x))),
