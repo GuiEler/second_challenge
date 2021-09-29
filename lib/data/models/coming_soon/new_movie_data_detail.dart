@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import '../../../domain/entities/entities.dart';
 import '../models.dart';
 
 class NewMovieDataDetailModel {
@@ -100,4 +100,12 @@ class NewMovieDataDetailModel {
 
   factory NewMovieDataDetailModel.fromJson(String source) =>
       NewMovieDataDetailModel.fromMap(json.decode(source));
+
+  MovieShortEntity toEntity() => MovieShortEntity(
+      id: id ?? '',
+      title: title ?? '',
+      year: year ?? '',
+      image: image ?? '',
+      imDbRating: imDbRating ?? '',
+      stars: stars ?? '');
 }

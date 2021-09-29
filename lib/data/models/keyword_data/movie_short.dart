@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:second_challenge/domain/entities/entities.dart';
+
 class MovieShortModel {
   final String? id;
   final String? title;
@@ -39,4 +41,12 @@ class MovieShortModel {
 
   factory MovieShortModel.fromJson(String source) =>
       MovieShortModel.fromMap(json.decode(source));
+
+  MovieShortEntity toEntity() => MovieShortEntity(
+      id: id ?? '',
+      title: title ?? '',
+      year: year ?? '',
+      image: image ?? '',
+      imDbRating: imDbRating ?? '',
+      stars: '');
 }

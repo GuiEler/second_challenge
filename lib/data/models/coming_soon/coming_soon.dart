@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import '../../../domain/entities/entities.dart';
 import '../models.dart';
 
 class ComingSoonModel {
@@ -30,4 +30,8 @@ class ComingSoonModel {
 
   factory ComingSoonModel.fromJson(String source) =>
       ComingSoonModel.fromMap(json.decode(source));
+
+  ComingSoonEntity toEntity() => ComingSoonEntity(
+      items: items?.map((movie) => movie.toEntity()).toList(),
+      errorMessage: errorMessage);
 }

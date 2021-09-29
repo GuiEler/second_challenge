@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:second_challenge/domain/entities/entities.dart';
+
 import '../models.dart';
 
 class KeywordDataModel {
@@ -34,4 +36,9 @@ class KeywordDataModel {
 
   factory KeywordDataModel.fromJson(String source) =>
       KeywordDataModel.fromMap(json.decode(source));
+
+  KeywordDataEntity toEntity() => KeywordDataEntity(
+      keyword: keyword ?? '',
+      items: items?.map((movie) => movie.toEntity()).toList(),
+      errorMessage: errorMessage);
 }

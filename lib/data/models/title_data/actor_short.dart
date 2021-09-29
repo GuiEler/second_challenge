@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import '../../../domain/entities/entities.dart';
+
 class ActorShortModel {
   final String? id;
   final String? image;
@@ -35,4 +37,10 @@ class ActorShortModel {
 
   factory ActorShortModel.fromJson(String source) =>
       ActorShortModel.fromMap(json.decode(source));
+
+  ActorShortEntity toEntity() => ActorShortEntity(
+      id: id ?? '',
+      image: image ?? '',
+      name: name ?? '',
+      asCharacter: asCharacter ?? '');
 }

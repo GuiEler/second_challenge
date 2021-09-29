@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:second_challenge/domain/entities/entities.dart';
+
 import '../models.dart';
 
 class TitleDataModel {
@@ -218,4 +220,20 @@ class TitleDataModel {
 
   factory TitleDataModel.fromJson(String source) =>
       TitleDataModel.fromMap(json.decode(source));
+
+  TitleDataEntity toEntity() => TitleDataEntity(
+      id: id ?? '',
+      title: title ?? '',
+      originalTitle: originalTitle ?? '',
+      fullTitle: fullTitle ?? '',
+      type: type ?? '',
+      year: year ?? '',
+      image: image ?? '',
+      releaseDate: releaseDate ?? '',
+      runtimeStr: runtimeStr ?? '',
+      genres: genres ?? '',
+      plot: plot ?? (plotLocal ?? ''),
+      stars: stars ?? '',
+      actorList: actorList?.map((actor) => actor.toEntity()).toList(),
+      errorMessage: errorMessage);
 }
