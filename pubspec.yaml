@@ -29,12 +29,12 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - lib/assets/images/
+    - lib/ui/assets/images/
 
 flutter_icons:
   android: true
   ios: true
-  image_path: "lib/assets/icons/launcher_icon.png"
+  image_path: "lib/ui/assets/icons/launcher_icon.png"
 
 flutter_app_name:
   name: "Nerdflix"
