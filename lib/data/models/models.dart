@@ -19,6 +19,7 @@ export 'title_data/rating_data.dart';
 export 'title_data/similar_short.dart';
 export 'title_data/star_short.dart';
 export 'title_data/trailer_data.dart';
+export 'title_data/title_data.dart';
 export 'title_data/tv_series_info.dart';
 export 'title_data/tv_episode_info.dart';
 export 'title_data/wikipedia_data.dart';
