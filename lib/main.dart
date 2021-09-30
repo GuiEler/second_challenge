@@ -24,8 +24,6 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const SplashPage(),
         '/home': (context) => const HomePage(),
-        '/title-data': (context) => const TitleDataPage(),
-        '/keyword-titles': (context) => const KeywordTitlesPage()
       },
     );
   }

@@ -8,13 +8,10 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String? routeName = ModalRoute.of(context)?.settings.name;
     Future.delayed(const Duration(milliseconds: 2000)).then((_) =>
         Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
             RouteAnimations(
-                    route: const HomePage(),
-                    duration: 1000,
-                    routeName: routeName ?? '')
+                    route: const HomePage(), duration: 1000, routeName: '/home')
                 .opacityTransition(0.3),
             (Route<dynamic> route) => false));
     // Navigator.pushNamedAndRemoveUntil(context, '/home', (Route<dynamic> route) => false));

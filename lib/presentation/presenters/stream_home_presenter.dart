@@ -47,7 +47,13 @@ class StreamHomePresenter implements HomePresenter {
     try {
       final KeywordDataEntity keywordData =
           await keywordDataLoader.loadKeywordData();
-      keywordDataStreamController.add(keywordData);
+      final KeywordDataEntity obj = KeywordDataEntity(
+          keyword: keywordData.keyword,
+          errorMessage: keywordData.errorMessage,
+          items: keywordData.items
+              ?.where((item) => item.image.isNotEmpty)
+              .toList());
+      keywordDataStreamController.add(obj);
     } on HttpError catch (error) {
       debugPrint('$error');
     }
