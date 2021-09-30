@@ -85,6 +85,7 @@ class _TitleCoverScrollViewState extends State<TitleCoverScrollView> {
                         for (var i = 0; i < 10; i++)
                           TitleCover(
                               id: snapshot.data!.items![i].id,
+                              title: snapshot.data!.items![i].title,
                               image: snapshot.data!.items![i].image)
                       ]));
                 } else if (snapshot.hasData && snapshot.data!.items!.isEmpty) {
