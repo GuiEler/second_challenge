@@ -1,68 +1,79 @@
 import 'package:flutter/material.dart';
-import 'package:second_challenge/domain/entities/entities.dart';
+import 'package:flutter/rendering.dart';
+import 'package:http/http.dart';
+import '../../../shared/shared.dart';
+import '../../../data/usecases/usecases.dart';
+import '../../../infra/infra.dart';
+import '../../../presentation/presenters/presenters.dart';
 
-import 'package:second_challenge/ui/pages/home/home.dart';
+import 'home.dart';
 
-class HomePage extends StatefulWidget {
-  final HomePresenter presenter;
-
-  const HomePage({
-    Key? key,
-    required this.presenter,
-  }) : super(key: key);
-
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    widget.presenter.loadComingSoonData();
-    widget.presenter.loadKeywordData();
-    super.initState();
-  }
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Nerdflix'),
+        centerTitle: true,
+      ),
       body: SafeArea(
+          minimum: const EdgeInsets.symmetric(vertical: 16.0),
           child: SizedBox.expand(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Expanded(
-                child: StreamBuilder<KeywordDataEntity>(
-                  stream: widget.presenter.keywordDataStream,
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData && snapshot.data!.items!.isNotEmpty) {
-                      return ListView.builder(
-                          physics: const BouncingScrollPhysics(),
-                          itemCount: snapshot.data?.items!.length,
-                          itemBuilder: (context, index) => ListTile(
-                                title: Text(snapshot.data!.items![index].title),
-                                subtitle:
-                                    Text(snapshot.data!.items![index].year),
-                              ));
-                    } else if (snapshot.hasData &&
-                        snapshot.data!.items!.isEmpty) {
-                      return const Center(
-                        child: Text('Nenhum resultado encontrado!'),
-                      );
-                    } else {
-                      return const Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    }
-                  },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: SizedBox.expand(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      TitleCoverScrollView(
+                        presenter: StreamHomePresenter(
+                          comingSoonLoader: RemoteLoadComingSoon(
+                            url: '${apiUrl}pt-BR/API/ComingSoon/$apiSecret',
+                            httpClient: HttpAdapter(client: Client()),
+                          ),
+                          keywordDataLoader: RemoteLoadKeywordData(
+                              url:
+                                  '${apiUrl}pt-BR/API/Keyword/$apiSecret/dramas',
+                              httpClient: HttpAdapter(client: Client())),
+                        ),
+                        keyword: 'Dramas',
+                      ),
+                      TitleCoverScrollView(
+                        presenter: StreamHomePresenter(
+                          comingSoonLoader: RemoteLoadComingSoon(
+                            url: '${apiUrl}pt-BR/API/ComingSoon/$apiSecret',
+                            httpClient: HttpAdapter(client: Client()),
+                          ),
+                          keywordDataLoader: RemoteLoadKeywordData(
+                            url: '${apiUrl}pt-BR/API/Keyword/$apiSecret/anime',
+                            httpClient: HttpAdapter(client: Client()),
+                          ),
+                        ),
+                        keyword: 'Anime',
+                      ),
+                      TitleCoverScrollView(
+                        presenter: StreamHomePresenter(
+                          comingSoonLoader: RemoteLoadComingSoon(
+                            url: '${apiUrl}pt-BR/API/ComingSoon/$apiSecret',
+                            httpClient: HttpAdapter(client: Client()),
+                          ),
+                          keywordDataLoader: RemoteLoadKeywordData(
+                            url:
+                                '${apiUrl}pt-BR/API/Keyword/$apiSecret/blockbuster',
+                            httpClient: HttpAdapter(client: Client()),
+                          ),
+                        ),
+                        keyword: 'Blockbuster',
+                      ),
+                      // TitleCoverScrollView(presenter: widget.presenter),
+                    ],
+                  ),
                 ),
-              )
-            ],
-          ),
-        ),
-      )),
+              ),
+            ),
+          )),
     );
   }
 }

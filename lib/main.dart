@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'infra/http/http.dart';
-import 'data/usecases/usecases.dart';
-import 'presentation/presenters/presenters.dart';
-
-import 'shared/shared.dart';
 import 'ui/components/components.dart';
-
 import 'ui/pages/pages.dart';
 
 void main() {
@@ -30,17 +23,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const SplashPage(),
-        '/home': (context) => HomePage(
-              presenter: StreamHomePresenter(
-                comingSoonLoader: RemoteLoadComingSoon(
-                  url: '${apiUrl}pt-BR/API/ComingSoon/$apiSecret',
-                  httpClient: HttpAdapter(client: Client()),
-                ),
-                keywordDataLoader: RemoteLoadKeywordData(
-                    url: '${apiUrl}pt-BR/API/Keyword/$apiSecret/dramas',
-                    httpClient: HttpAdapter(client: Client())),
-              ),
-            ),
+        '/home': (context) => const HomePage(),
         '/title-data': (context) => const TitleDataPage(),
         '/keyword-titles': (context) => const KeywordTitlesPage()
       },
