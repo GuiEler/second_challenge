@@ -58,10 +58,10 @@ mixin AppTheme {
     onPrimary: Color(0xFF303030),
     onSecondary: Color(0xFF303030),
     onSurface: Color(0xFF677075),
-    primary: Color(0xFF31844A),
-    primaryVariant: Color(0xFF63B476),
-    secondary: Color(0xFF367E9B),
-    secondaryVariant: Color(0xFF6AADCC),
+    primary: Color(0xFFFFFFFF),
+    primaryVariant: Color(0xFFE1E6E3),
+    secondary: Color(0xFF677075),
+    secondaryVariant: Color(0xFF303030),
     surface: Color(0xFF303030),
   );
 
