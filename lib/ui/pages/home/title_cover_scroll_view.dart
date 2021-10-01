@@ -8,7 +8,7 @@ import '../../../shared/shared.dart';
 import '../pages.dart';
 
 class TitleCoverScrollView extends StatefulWidget {
-  final HomePresenter presenter;
+  final TitleCoverScrollViewPresenter presenter;
   final String keyword;
 
   const TitleCoverScrollView({
@@ -35,9 +35,8 @@ class _TitleCoverScrollViewState extends State<TitleCoverScrollView> {
 
   @override
   void initState() {
-    widget.presenter.loadComingSoonData();
-    widget.presenter.loadKeywordData();
     super.initState();
+    widget.presenter.loadKeywordData();
   }
 
   @override
@@ -76,7 +75,7 @@ class _TitleCoverScrollViewState extends State<TitleCoverScrollView> {
             child: StreamBuilder<KeywordDataEntity>(
               stream: widget.presenter.keywordDataStream,
               builder: (context, snapshot) {
-                if (snapshot.hasData && snapshot.data!.items!.isNotEmpty) {
+                if (snapshot.hasData && snapshot.data!.items != null) {
                   keywordData = snapshot.data!;
                   return SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
@@ -88,7 +87,7 @@ class _TitleCoverScrollViewState extends State<TitleCoverScrollView> {
                               title: snapshot.data!.items![i].title,
                               image: snapshot.data!.items![i].image)
                       ]));
-                } else if (snapshot.hasData && snapshot.data!.items!.isEmpty) {
+                } else if (snapshot.hasData && snapshot.data!.items == null) {
                   return const Center(
                     child: Text('Nenhum resultado encontrado!'),
                   );
@@ -102,13 +101,13 @@ class _TitleCoverScrollViewState extends State<TitleCoverScrollView> {
                               width: 110,
                               height: 160,
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: Theme.of(context).colorScheme.background,
                                 borderRadius: BorderRadius.circular(4),
                               ),
                             )
                         ]),
                       ),
-                      baseColor: Theme.of(context).colorScheme.secondary,
+                      baseColor: Theme.of(context).colorScheme.background,
                       highlightColor:
                           Theme.of(context).colorScheme.secondaryVariant);
                 }
