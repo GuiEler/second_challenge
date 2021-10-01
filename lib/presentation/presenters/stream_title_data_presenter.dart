@@ -31,7 +31,8 @@ class StreamTitleDataPresenter implements TitleDataPresenter {
     try {
       final TitleDataEntity titleData = await titleDataLoader.loadTitleData();
       titleDataStreamController.add(titleData);
-      if (titleData.errorMessage != null) {
+      if (titleData.errorMessage != null &&
+          titleData.errorMessage!.length > 1) {
         onErrorStreamController
             .add(OnError(errorMessage: titleData.errorMessage));
       }
@@ -40,4 +41,15 @@ class StreamTitleDataPresenter implements TitleDataPresenter {
       onErrorStreamController.add(OnError(errorMessage: '$error'));
     }
   }
+
+  final ValueNotifier<double> _scrollNotifier = ValueNotifier<double>(0);
+
+  @override
+  double get scrollOffset => _scrollNotifier.value;
+
+  @override
+  set scrollOffset(double value) => _scrollNotifier.value = value;
+
+  @override
+  ValueNotifier<double> get scrollNotifier => _scrollNotifier;
 }
