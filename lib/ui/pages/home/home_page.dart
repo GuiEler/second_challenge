@@ -60,7 +60,8 @@ class _HomePageState extends State<HomePage> {
                         stream: widget.presenter.comingSoonStream,
                         builder: (context, snapshot) {
                           if (snapshot.hasData &&
-                              snapshot.data!.items != null) {
+                              snapshot.data!.items != null &&
+                              snapshot.data!.items!.isNotEmpty) {
                             return ContentHeader(
                               id: snapshot.data!.items![0].id,
                               title: snapshot.data!.items![0].title,
