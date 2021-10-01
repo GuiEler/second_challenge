@@ -4,3 +4,6 @@ export 'utils/route_animations/route_animations.dart';
 export 'widgets/title_cover.dart';
 export 'on_error.dart';
 export 'widgets/custom_dialog.dart';
+export 'widgets/content_header.dart';
+export 'widgets/vertical_icon_button.dart';
+export 'widgets/custom_app_bar.dart';
