@@ -172,46 +172,83 @@ class TitleDataModel {
       plotLocalIsRtl: map['plotLocalIsRtl'],
       awards: map['awards'],
       directors: map['directors'],
-      directorList: List<StarShortModel>.from(
-          map['directorList']?.map((x) => StarShortModel.fromMap(x))),
+      directorList: map['directorList'] != null
+          ? List<StarShortModel>.from(
+              map['directorList']?.map((x) => StarShortModel.fromMap(x)))
+          : null,
       writers: map['writers'],
-      writerList: List<StarShortModel>.from(
-          map['writerList']?.map((x) => StarShortModel.fromMap(x))),
+      writerList: map['writerList'] != null
+          ? List<StarShortModel>.from(
+              map['writerList']?.map((x) => StarShortModel.fromMap(x)))
+          : null,
       stars: map['stars'],
-      startList: List<StarShortModel>.from(
-          map['startList']?.map((x) => StarShortModel.fromMap(x))),
-      actorList: List<ActorShortModel>.from(
-          map['actorList']?.map((x) => ActorShortModel.fromMap(x))),
-      fullCast: FullCastDataModel.fromMap(map['fullCast']),
+      startList: map['startList'] != null
+          ? List<StarShortModel>.from(
+              map['startList']?.map((x) => StarShortModel.fromMap(x)))
+          : null,
+      actorList: map['actorList'] != null
+          ? List<ActorShortModel>.from(
+              map['actorList']?.map((x) => ActorShortModel.fromMap(x)))
+          : null,
+      fullCast: map['fullCast'] != null
+          ? FullCastDataModel.fromMap(map['fullCast'])
+          : null,
       genres: map['genres'],
-      genreList: List<KeyValueItemModel>.from(
-          map['genreList']?.map((x) => KeyValueItemModel.fromMap(x))),
+      genreList: map['genreList'] != null
+          ? List<KeyValueItemModel>.from(
+              map['genreList']?.map((x) => KeyValueItemModel.fromMap(x)))
+          : null,
       companies: map['companies'],
-      companyList: List<CompanyShortModel>.from(
-          map['companyList']?.map((x) => CompanyShortModel.fromMap(x))),
+      companyList: map['companyList'] != null
+          ? List<CompanyShortModel>.from(
+              map['companyList']?.map((x) => CompanyShortModel.fromMap(x)))
+          : null,
       countries: map['countries'],
-      countryList: List<KeyValueItemModel>.from(
-          map['countryList']?.map((x) => KeyValueItemModel.fromMap(x))),
+      countryList: map['countryList'] != null
+          ? List<KeyValueItemModel>.from(
+              map['countryList']?.map((x) => KeyValueItemModel.fromMap(x)))
+          : null,
       languages: map['languages'],
-      languageList: List<KeyValueItemModel>.from(
-          map['languageList']?.map((x) => KeyValueItemModel.fromMap(x))),
+      languageList: map['languageList'] != null
+          ? List<KeyValueItemModel>.from(
+              map['languageList']?.map((x) => KeyValueItemModel.fromMap(x)))
+          : null,
       contentRating: map['contentRating'],
       imDbRating: map['imDbRating'],
       imDbRatingVotes: map['imDbRatingVotes'],
       metacriticRating: map['metacriticRating'],
-      ratings: RatingDataModel.fromMap(map['ratings']),
-      wikipedia: WikipediaDataModel.fromMap(map['wikipedia']),
-      posters: PosterDataModel.fromMap(map['posters']),
-      images: ImageDataModel.fromMap(map['images']),
-      trailer: TrailerDataModel.fromMap(map['trailer']),
-      boxOffice: BoxOfficeShortModel.fromMap(map['boxOffice']),
+      ratings: map['ratings'] != null
+          ? RatingDataModel.fromMap(map['ratings'])
+          : null,
+      wikipedia: map['wikipedia'] != null
+          ? WikipediaDataModel.fromMap(map['wikipedia'])
+          : null,
+      posters: map['posters'] != null
+          ? PosterDataModel.fromMap(map['posters'])
+          : null,
+      images:
+          map['images'] != null ? ImageDataModel.fromMap(map['images']) : null,
+      trailer: map['trailer'] != null
+          ? TrailerDataModel.fromMap(map['trailer'])
+          : null,
+      boxOffice: map['boxOffice'] != null
+          ? BoxOfficeShortModel.fromMap(map['boxOffice'])
+          : null,
       tagline: map['tagline'],
       keywords: map['keywords'],
-      keywordList: List<String>.from(map['keywordList']),
-      similars: List<SimilarShortModel>.from(
-          map['similars']?.map((x) => SimilarShortModel.fromMap(x))),
-      tvSeriesInfo: TvSeriesInfoModel.fromMap(map['tvSeriesInfo']),
-      tvEpisodeInfo: TvEpisodeInfoModel.fromMap(map['tvEpisodeInfo']),
+      keywordList: map['keywordList'] != null
+          ? List<String>.from(map['keywordList'])
+          : null,
+      similars: map['similars'] != null
+          ? List<SimilarShortModel>.from(
+              map['similars']?.map((x) => SimilarShortModel.fromMap(x)))
+          : null,
+      tvSeriesInfo: map['tvSeriesInfo'] != null
+          ? TvSeriesInfoModel.fromMap(map['tvSeriesInfo'])
+          : null,
+      tvEpisodeInfo: map['tvEpisodeInfo'] != null
+          ? TvEpisodeInfoModel.fromMap(map['tvEpisodeInfo'])
+          : null,
       errorMessage: map['errorMessage'],
     );
   }

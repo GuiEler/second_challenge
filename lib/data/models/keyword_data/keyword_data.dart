@@ -26,8 +26,10 @@ class KeywordDataModel {
   factory KeywordDataModel.fromMap(Map<String, dynamic> map) {
     return KeywordDataModel(
       keyword: map['keyword'],
-      items: List<MovieShortModel>.from(
-          map['items']?.map((x) => MovieShortModel.fromMap(x))),
+      items: map['items'] != null
+          ? List<MovieShortModel>.from(
+              map['items']?.map((x) => MovieShortModel.fromMap(x)))
+          : null,
       errorMessage: map['errorMessage'],
     );
   }
