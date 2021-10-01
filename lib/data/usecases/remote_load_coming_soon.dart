@@ -14,8 +14,7 @@ class RemoteLoadComingSoon implements LoadComingSoon {
 
   @override
   Future<ComingSoonEntity> loadComingSoon() async {
-    final Map<String, dynamic> response =
-        await httpClient.request(url: url, method: 'get');
+    final dynamic response = await httpClient.request(url: url, method: 'get');
     return ComingSoonModel.fromMap(response).toEntity();
   }
 }

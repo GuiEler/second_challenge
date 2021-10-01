@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'package:second_challenge/shared/shared.dart';
+import 'presentation/presenters/presenters.dart';
+import 'data/usecases/usecases.dart';
+import 'infra/infra.dart';
 import 'ui/components/components.dart';
 import 'ui/pages/pages.dart';
 
@@ -23,7 +28,14 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const SplashPage(),
-        '/home': (context) => const HomePage(),
+        '/home': (context) => HomePage(
+              presenter: StreamHomePresenter(
+                comingSoonLoader: RemoteLoadComingSoon(
+                  url: '${apiUrl}pt-BR/API/ComingSoon/$apiSecret',
+                  httpClient: HttpAdapter(client: Client()),
+                ),
+              ),
+            ),
       },
     );
   }

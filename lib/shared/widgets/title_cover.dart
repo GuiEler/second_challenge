@@ -35,7 +35,7 @@ class _TitleCoverState extends State<TitleCover>
                       httpClient: HttpAdapter(
                         client: Client(),
                       ),
-                      url: '${apiUrl}pt-BR/API/Title/a$apiSecret/$title',
+                      url: '${apiUrl}pt-BR/API/Title/$apiSecret/$title',
                     ),
                   ),
                 ),

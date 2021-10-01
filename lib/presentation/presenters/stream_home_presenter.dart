@@ -32,7 +32,8 @@ class StreamHomePresenter implements HomePresenter {
       final ComingSoonEntity comingSoon =
           await comingSoonLoader.loadComingSoon();
       comingSoonStreamController.add(comingSoon);
-      if (comingSoon.errorMessage != null) {
+      if (comingSoon.errorMessage != null &&
+          comingSoon.errorMessage!.length > 1) {
         onErrorStreamController
             .add(OnError(errorMessage: comingSoon.errorMessage));
       }
@@ -41,4 +42,15 @@ class StreamHomePresenter implements HomePresenter {
       onErrorStreamController.add(OnError(errorMessage: '$error'));
     }
   }
+
+  final ValueNotifier<double> _scrollNotifier = ValueNotifier<double>(0);
+
+  @override
+  double get scrollOffset => _scrollNotifier.value;
+
+  @override
+  set scrollOffset(double value) => _scrollNotifier.value = value;
+
+  @override
+  ValueNotifier<double> get scrollNotifier => _scrollNotifier;
 }
