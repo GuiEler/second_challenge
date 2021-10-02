@@ -51,8 +51,6 @@ class ContentHeader extends StatelessWidget {
         width: avaliableWidth,
         height: avaliableWidth * (160 / 110),
         child: CachedNetworkImage(
-          memCacheHeight: 2000,
-          memCacheWidth: 2000,
           imageUrl: image,
           imageBuilder: (context, imageProvider) => Container(
             decoration: BoxDecoration(
