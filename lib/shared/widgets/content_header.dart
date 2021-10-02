@@ -61,8 +61,14 @@ class ContentHeader extends StatelessWidget {
               ),
             ),
           ),
-          errorWidget: (context, url, error) =>
-              const Center(child: Icon(Icons.error)),
+          errorWidget: (context, url, error) => const Center(
+            child: Icon(Icons.error),
+          ),
+          placeholder: (context, url) => const Center(
+            child: CircularProgressIndicator(
+              color: Colors.white,
+            ),
+          ),
         ),
       ),
       Container(
