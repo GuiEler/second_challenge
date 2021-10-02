@@ -195,14 +195,6 @@ class _TitleDataPageState extends State<TitleDataPage> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 8.0),
                                 child: Column(children: [
-                                  Row(
-                                    children: [
-                                      Text('Elenco',
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .headline6)
-                                    ],
-                                  ),
                                   SizedBox(
                                     height: avaliableHeight * 0.015,
                                   ),
@@ -224,7 +216,6 @@ class _TitleDataPageState extends State<TitleDataPage> {
                                                       child: CircleAvatar(
                                                         radius: 32.0,
                                                         child: Container(
-                                                          color: Colors.white,
                                                           decoration:
                                                               const BoxDecoration(
                                                                   shape: BoxShape

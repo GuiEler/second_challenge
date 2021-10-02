@@ -60,7 +60,7 @@ class _KeywordTitlesPageState extends State<KeywordTitlesPage> {
               ),
               Expanded(
                   child: GridView.builder(
-                cacheExtent: 9999,
+                cacheExtent: 20000,
                 physics: const BouncingScrollPhysics(),
                 itemCount: arguments.items!.length,
                 itemBuilder: (BuildContext context, int index) {
