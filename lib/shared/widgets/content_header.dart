@@ -51,8 +51,8 @@ class ContentHeader extends StatelessWidget {
         width: avaliableWidth,
         height: avaliableWidth * (160 / 110),
         child: CachedNetworkImage(
-          memCacheHeight: 500,
-          memCacheWidth: 500,
+          memCacheHeight: 2000,
+          memCacheWidth: 2000,
           imageUrl: image,
           imageBuilder: (context, imageProvider) => Container(
             decoration: BoxDecoration(
@@ -78,16 +78,20 @@ class ContentHeader extends StatelessWidget {
         ),
       ),
       Positioned(
-        bottom: 110.0,
-        child: Text(
-          title,
-          style: Theme.of(context).textTheme.headline4,
-          textAlign: TextAlign.center,
+        bottom: 80.0,
+        child: ConstrainedBox(
+          constraints: BoxConstraints(maxWidth: avaliableWidth * 0.9),
+          child: Text(
+            title,
+            style: Theme.of(context).textTheme.headline4,
+            textAlign: TextAlign.center,
+            overflow: TextOverflow.fade,
+          ),
         ),
       ),
       if (showButtons)
         Positioned(
-            bottom: 40,
+            bottom: 30,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
