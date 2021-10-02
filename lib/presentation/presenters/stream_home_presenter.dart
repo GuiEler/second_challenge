@@ -28,7 +28,7 @@ class StreamHomePresenter implements HomePresenter {
     var rng = Random();
     int index = 0;
     comingSoonStreamController.add(items[index]);
-    changer = Timer.periodic(const Duration(seconds: 10), (timer) {
+    changer = Timer.periodic(const Duration(seconds: 15), (timer) {
       index = rng.nextInt(items.length);
       comingSoonStreamController.add(items[index]);
     });
