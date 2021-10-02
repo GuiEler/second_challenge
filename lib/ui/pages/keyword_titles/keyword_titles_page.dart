@@ -21,10 +21,19 @@ class _KeywordTitlesPageState extends State<KeywordTitlesPage> {
         ModalRoute.of(context)?.settings.arguments as KeywordDataEntity;
     final mediaQuery = MediaQuery.of(context).size;
     final avaliableWidth = mediaQuery.width;
+    final avaliableHeight = mediaQuery.height;
     return Scaffold(
-      appBar: AppBar(),
+      extendBodyBehindAppBar: true,
+      appBar: PreferredSize(
+        preferredSize: Size(avaliableWidth, avaliableHeight * 0.1),
+        child: const CustomAppBar(
+          isHomePage: false,
+          scrollOffset: 0,
+        ),
+      ),
       body: SafeArea(
-        minimum: const EdgeInsets.symmetric(vertical: 16.0),
+        top: false,
+        minimum: EdgeInsets.only(bottom: 16.0, top: avaliableHeight * 0.05),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Column(
@@ -32,8 +41,11 @@ class _KeywordTitlesPageState extends State<KeywordTitlesPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    width: avaliableWidth * 0.92,
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxWidth: avaliableWidth * 0.92,
+                      maxHeight: avaliableHeight * 0.1,
+                    ),
                     child: Text(
                       capitalizeString(arguments.keyword),
                       style: Theme.of(context).textTheme.headline4,
