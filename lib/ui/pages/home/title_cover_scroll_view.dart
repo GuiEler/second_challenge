@@ -9,12 +9,10 @@ import '../pages.dart';
 
 class TitleCoverScrollView extends StatefulWidget {
   final TitleCoverScrollViewPresenter presenter;
-  final String keyword;
 
   const TitleCoverScrollView({
     Key? key,
     required this.presenter,
-    required this.keyword,
   }) : super(key: key);
 
   @override
@@ -33,6 +31,11 @@ class _TitleCoverScrollViewState extends State<TitleCoverScrollView> {
             .slide());
   }
 
+  String capitalizeString(String string) {
+    return string.substring(0, 1).toUpperCase() +
+        string.substring(1, string.length);
+  }
+
   @override
   void initState() {
     super.initState();
@@ -43,50 +46,56 @@ class _TitleCoverScrollViewState extends State<TitleCoverScrollView> {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final avaliableHeight = mediaQuery.size.height;
-    KeywordDataEntity? keywordData;
     // final avaliableWidth = mediaQuery.size.width;
     return SizedBox(
-      height: avaliableHeight * 0.27,
+      height: avaliableHeight * 0.3,
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(widget.keyword,
-                  style: Theme.of(context).textTheme.headline6),
-              RichText(
-                text: TextSpan(
-                  text: 'Ver mais',
-                  style: Theme.of(context).textTheme.subtitle2,
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      if (keywordData != null) {
-                        navigateToKeywordTitlesPage(keywordData!);
-                      }
-                    },
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 8.0,
-          ),
           Expanded(
             child: StreamBuilder<KeywordDataEntity>(
               stream: widget.presenter.keywordDataStream,
               builder: (context, snapshot) {
                 if (snapshot.hasData && snapshot.data!.items != null) {
-                  keywordData = snapshot.data!;
-                  return SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      physics: const BouncingScrollPhysics(),
-                      child: Wrap(spacing: 8.0, children: [
-                        for (var i = 0; i < 10; i++)
-                          TitleCover(
-                              id: snapshot.data!.items![i].id,
-                              title: snapshot.data!.items![i].title,
-                              image: snapshot.data!.items![i].image)
-                      ]));
+                  return Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(capitalizeString(snapshot.data!.keyword),
+                              style: Theme.of(context).textTheme.headline6),
+                          RichText(
+                            text: TextSpan(
+                              text: 'Ver mais',
+                              style: Theme.of(context).textTheme.subtitle2,
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  debugPrint('tap');
+                                  navigateToKeywordTitlesPage(snapshot.data!);
+                                },
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 8.0,
+                      ),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        physics: const BouncingScrollPhysics(),
+                        child: Column(
+                          children: [
+                            Wrap(spacing: 8.0, children: [
+                              for (var i = 0; i < 10; i++)
+                                TitleCover(
+                                    id: snapshot.data!.items![i].id,
+                                    title: snapshot.data!.items![i].title,
+                                    image: snapshot.data!.items![i].image)
+                            ]),
+                          ],
+                        ),
+                      )
+                    ],
+                  );
                 } else if (snapshot.hasData && snapshot.data!.items == null) {
                   return const Center(
                     child: Text('Nenhum resultado encontrado!'),
