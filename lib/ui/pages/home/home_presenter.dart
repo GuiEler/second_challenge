@@ -4,7 +4,7 @@ import '../../../shared/shared.dart';
 import '../../../domain/entities/entities.dart';
 
 abstract class HomePresenter {
-  Stream<ComingSoonEntity> get comingSoonStream;
+  Stream<MovieShortEntity> get comingSoonStream;
   Stream<OnError> get onErrorStream;
 
   double get scrollOffset;
