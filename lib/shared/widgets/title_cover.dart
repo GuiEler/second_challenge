@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:shimmer/shimmer.dart';
 import '../../data/usecases/usecases.dart';
 import '../../infra/http/http.dart';
 import '../../presentation/presenters/presenters.dart';
