@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'Use Academy',
       theme: AppTheme.lightThemeData,
       darkTheme: AppTheme.darkThemeData,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
